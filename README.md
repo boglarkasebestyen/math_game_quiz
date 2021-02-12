@@ -1,6 +1,6 @@
 ## Math Game Quiz
 
-Math Game Quiz is a small project I've moderately customized as I've followed along a [Udemy's Web Development course](https://www.udemy.com/course/complete-web-development-course/) in 2019. 
+Math Game Quiz is a small project I've moderately customized as I've followed along [Udemy's Web Development course](https://www.udemy.com/course/complete-web-development-course/) in 2019. 
 
 ![](https://media.giphy.com/media/0H0afosKmJhV3iZxrO/giphy.gif)
 
