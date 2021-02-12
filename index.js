@@ -42,9 +42,8 @@ document.getElementById("start-reset").onclick =
 /* reloading the page - rewritten since Codepen removed the location.reload() method */
    var reload = function() {
   		location.href = location.href;
-	}
-	
-setTimeout(reload, 10); 
+    }
+	setTimeout(reload, 10); 
         
     } else {//if we are not playing
         
@@ -52,7 +51,7 @@ setTimeout(reload, 10);
         playing = true; //the page gets reloaded and has the default settings
         score = 0; //set the score to 0
         
-document.getElementById("score-value").innerHTML = score; //we need to access it in order to change the value of the score. if we don't, it'll always be the 0 written in the HTML file, in span
+	document.getElementById("score-value").innerHTML = score; //we need to access it in order to change the value of the score. if we don't, it'll always be the 0 written in the HTML file, in span
         
         
 //document.getElementById("timeremaining").style.display = "block"; //to access the display property, we're gonna use .style.display. in order to show the element, we're gonna use set the display to block because in the HTML file it's set to display: none. so this segment is: SHOW COUNTDOWN BOX
