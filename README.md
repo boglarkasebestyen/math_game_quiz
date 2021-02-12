@@ -2,8 +2,11 @@
 
 Math Game Quiz is a small project I've moderately customized as I've followed along a [Udemy's Web Development course](https://www.udemy.com/course/complete-web-development-course/) in 2019. 
 
+![](https://media.giphy.com/media/0H0afosKmJhV3iZxrO/giphy.gif)
+
+
 ### How it works
-* Open the game [here](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.thehungryjpeg.com%2Fthumbs2%2F800_3551161_ygzoc3klpml4dakdbs0o82n4uj9eoxi3rpol2zhd_neon-coming-soon-sign-film-announce-badge-new-shop-promotion-glowing.jpg&f=1&nofb=1). 
+* Open the game [here](https://cdpn.io/boglarkasebestyen/debug/PoNpQGg/vPMKKgeeaNGM). 
 * If needed, select Full Page view from the upper right corner at Change View.
 * Press Start Game.
 * A timer will begin that will count back from 60. 
