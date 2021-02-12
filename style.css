@@ -1,0 +1,264 @@
+/*#1: style the entire "container" / page*/
+
+html{
+    height: 100%;
+    background: radial-gradient(circle,#fff,#b0f9ff);
+    background: -webkit-radial-gradient(circle,#fff,#b0f9ff);
+    background: -o-radial-gradient(circle,#fff,#b0f9ff);
+    background: -mo-radial-gradient(circle,#fff,#b0f9ff);
+    background: -ms-radial-gradient(circle,#fff,#b0f9ff);
+    font-family: monospace;
+}
+/* --> this is not gonna work with the body element*/
+
+
+/*#2: create the small (pink) container*/
+#container{
+    height: 500px;
+    width: 550px;
+    background-color: lightpink;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 1px 1px red;
+    -moz-box-shadow: 0px 3px 1px 1px red;
+    -ms-box-shadow: 0px 3px 1px 1px red;
+    -o-box-shadow: 0px 3px 1px 1px red;
+/*
+        *syntax of the box-shadow:
+        - horizontal offset: if positive, then the shadow is on the right of the box
+        
+        - vertical offset: if positive, then the shadow is on the bottom of the box; if negative: then it's at the top of the box
+        
+        - blur radius: if 0, the shadow is sharp; if it's increased, then the shadow becomes more and more blurry
+        
+        - (optional) spread radius: controls the size of the shadow
+        
+        - color: of the shadow
+*/
+    position: relative; 
+}
+
+/*#3: create the tiny container (sticky note)*/
+#score{
+    background-color: lightyellow;
+    color: slategray;
+    padding: 11px;
+    position: absolute;
+/*    so that we can position it relative to the container. for this, the container's position needs to be set relative first*/
+    left: 490px;
+    box-shadow: 0px 4px 1px darkred;
+    -webkit-box-shadow: 0px 4px 1px darkred;
+    -mo-box-shadow: 0px 4px 1px darkred;
+    -ms-box-shadow: 0px 4px 1px darkred;
+    -o-box-shadow: 0px 4px 1px darkred;
+/*    if we don't set the blur radius, it's the same as having it 0*/
+}
+
+
+/*ANSWER #1*/
+#correct{
+    position: absolute;
+/*    just as the sticky note*/
+    left: 260px;
+    background-color: mediumvioletred;
+    color: white;
+    padding: 11px;
+    display: none;
+/*    hidden until we set everything in JS*/
+}
+
+
+/*ANSWER #1*/
+#wrong{
+    position: absolute;
+    left: 250px;
+    background-color: black;
+    color: white;
+    padding: 11px;
+    display: none;
+/*    hidden until we set everything in JS*/
+}
+
+
+/*QUESTION BOX*/
+#question{
+    width: 450px;
+    height: 150px;
+/*    it behaves as if the existing elements wouldn't exist because those are positioned absolute*/
+    margin: 50px auto 10px auto;
+/*    we used the margin property to center it*/
+    background-color: hotpink;
+    box-shadow: 0px 4px 2px darkred;
+    -webkit-box-shadow: 0px 4px 2px darkred;
+    -mo-box-shadow: 0px 4px 2px darkred;
+    -ms-box-shadow: 0px 4px 2px darkred;
+    -o-box-shadow: 0px 4px 2px darkred;
+/*text:*/
+    font-size: 100px;
+    text-align: center;
+    color: black;
+}
+
+
+/*INSTRUCTION BOX*/
+#instruction{
+    width: 450px;
+    height: 50px;
+    background-color: mediumvioletred;
+    margin: 13px auto;
+/*    top/bottom + left/right*/
+/*    text:*/
+    text-align: center;
+    line-height: 45px;
+    box-shadow: 0px 3px 2px darkred;    
+    -webkit-box-shadow: 0px 3px 2px darkred;    
+    -mo-box-shadow: 0px 3px 2px darkred;    
+    -ms-box-shadow: 0px 3px 2px darkred;    
+    -o-box-shadow: 0px 3px 2px darkred;    
+}
+
+
+/*main div in which we'll have the 4 small ones*/
+#choices{
+    width: 450px;
+    height: 100px;
+    margin: 5px auto;
+}
+
+
+.box{
+    width: 85px;
+    height: 85px;
+/*    to make the boxes go right and have space between them:*/
+    float: left;
+    margin-right: 36px;
+/*    the boxes don't fit. in the final and correct version, the last box on the right doesn't have any margin-right, actually. so we're gonna style the 4th box now and, after that, change the px of margin-right of all the boxes again*/
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 3px maroon;
+    -webkit-box-shadow: 0px 4px 3px maroon;
+    -mo-box-shadow: 0px 4px 3px maroon;
+    -ms-box-shadow: 0px 4px 3px maroon;
+    -o-box-shadow: 0px 4px 3px maroon;
+    background-color: palevioletred;
+/*    text:*/
+    text-align: center;
+    line-height: 80px;
+    position: relative;
+/*    the button becomes bouncier:*/
+    transition: all 0.2s;
+/*    for cross-browser compatibility:*/
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+}
+
+
+/*    when we hover on the box:*/
+.box:hover, #start-reset:hover{
+    background-color: plum;
+    color: white;
+    box-shadow: 0px 4px 3px purple;
+    -webkit-box-shadow: 0px 4px 3px purple;
+    -ms-box-shadow: 0px 4px 3px purple;
+    -ms-box-shadow: 0px 4px 3px purple;
+    -o-box-shadow: 0px 4px 3px purple;
+}
+
+
+.box:active, #start-reset:active{
+    box-shadow: 0px 0px purple;
+    -webkit-box-shadow: 0px 0px purple;
+    -mo-box-shadow: 0px 0px purple;
+    -ms-box-shadow: 0px 0px purple;
+    -o-box-shadow: 0px 0px purple;
+    top: 4px;
+}
+
+
+#box4{
+    margin-right: 0;
+}
+
+
+/*START BUTTON*/
+/*we are copying the properties of the .box class*/
+#start-reset{
+    width: 88px;
+    padding: 15px;
+/*    to center it:*/
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 3px maroon;
+    -webkit-box-shadow: 0px 4px 3px maroon;
+    -mo-box-shadow: 0px 4px 3px maroon;
+    -ms-box-shadow: 0px 4px 3px maroon;
+    -o-box-shadow: 0px 4px 3px maroon;
+/*    text:*/
+    text-align: center;
+    position: relative;
+/*    the button becomes bouncier:*/
+    transition: all 0.2s;
+/*    for cross-browser compatibility:*/
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+}
+    
+
+/*TIME REMAINING BOX*/
+#timeremaining{
+    width: 152px;
+    padding: 11px;
+/*    positioning it inside the container:*/
+    position: absolute;
+    top: 490px;
+    left: 210px;
+    background-color: #ffe9ec;
+    border-radius: 3px;
+    box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+    -ms-box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+    -o-box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+/*    visibility: hidden;*/
+/*    we can also use display; difference: visibility=it's still present on the page and it interacts with the other elements. this time it's not interacting with the other elements, because the position is set to absolute, so the other elements behave as if it wouldn't exist*/
+    display: none;
+    text-align: center;
+    
+}
+
+/*GAME OVER SCREEN*/
+#gameOver{
+    height: 200px;
+    width: 500px;
+    background: linear-gradient(#9dd6d6, #31698a);
+    background: -webkit-linear-gradient(#9dd6d6, #31698a);
+    background: -moz-linear-gradient(#9dd6d6, #31698a);
+    background: -o-linear-gradient(#9dd6d6, #31698a);
+    background: -ms-linear-gradient(#9dd6d6, #31698a);
+/*text inside the div:*/
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 100px;
+    left: 45px;
+/*    making sure it appears on top of the other elements:*/
+    z-index: 2;
+    display: none;
+    
+}
+    
+   
+
+
+
+
+
