@@ -36,8 +36,15 @@ var correctAnswer;
 document.getElementById("start-reset").onclick = 
     function() {
 //     - if we are playing: yes or no: we need a boolean here, or a variable that we will set at the beinning of our code. when we will load our page, the var playing will be false by default(*) 
-    if(playing == true) { //if playing is true, NOT if playing mode is true
-       location.reload(); //reloads the page
+    if (playing == true) { //if playing is true, NOT if playing mode is true
+
+         
+/* reloading the page - rewritten since Codepen removed the location.reload() method */
+   var reload = function() {
+  		location.href = location.href;
+	}
+	
+setTimeout(reload, 10); 
         
     } else {//if we are not playing
         
@@ -176,5 +183,6 @@ document.getElementById("box" + i).innerHTML = wrongAnswer;
     }
 }
     
+
 
 
