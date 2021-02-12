@@ -38,12 +38,13 @@ document.getElementById("start-reset").onclick =
 //     - if we are playing: yes or no: we need a boolean here, or a variable that we will set at the beinning of our code. when we will load our page, the var playing will be false by default(*) 
     if (playing == true) { //if playing is true, NOT if playing mode is true
 
-         
-/* reloading the page - rewritten since Codepen removed the location.reload() method */
+/* reloading the page - rewritten since Codepen removed 
+the location.reload() method */
    var reload = function() {
-  		location.href = location.href;
+	window.location = location.href
     }
-	setTimeout(reload, 10); 
+    
+    setTimeout(reload, 100); 
         
     } else {//if we are not playing
         
@@ -78,7 +79,7 @@ document.getElementById("start-reset").innerHTML = "Reset Game!";
 }
 
 //clicking on the answer box
-for (i=1;i<5;i++) {
+for (var i = 1; i < 5; i++) {
     document.getElementById("box" + i).onclick = 
     function() {
         //check if we are playing
@@ -168,7 +169,7 @@ document.getElementById("box" + correctPosition).innerHTML = correctAnswer; //fi
     //fill other boxes with wrong answers
     var answers = [correctAnswer];
         
-    for(i=1; i<5; i++) {
+    for(var i = 1; i < 5; i++) {
         if(i != correctPosition) {
             var wrongAnswer; 
             do{ 
@@ -182,6 +183,7 @@ document.getElementById("box" + i).innerHTML = wrongAnswer;
     }
 }
     
+
 
 
 
